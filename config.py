@@ -10,6 +10,7 @@ korean_translation = {'role': 'assistant', 'content': 'A translator for a family
 # System Roles #
 ###################
 
+
 ##############
 # User Roles #
 ##############

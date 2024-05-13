@@ -43,23 +43,26 @@ def makeComment():
     try:
         data = request.get_json()
 
-        # Response required to meet format    
+        # Response required to meet format:
+        # {'role': 'system', 'content': INFO}
         if 'role' not in data or 'content' not in data:
             error_response = {
                 'status': 'error',
                 'message': 'Missing required fields: role and content must be provided.'
             }
             return make_response(jsonify(error_response), 400)
-        
-        messages = config.messages
+    
+        messages = config.messages.copy()
         messages.append(data)
+
+        print(messages);
 
         response = client.chat.completions.create(
             model = config.model,
             messages=messages
         )
         english_response = response.choices[-1].message.content
-        print(english_response);
+        
 
         translation_messages = config.translation_messages
         translation_messages.append({'role': 'user', 'content': english_response})
