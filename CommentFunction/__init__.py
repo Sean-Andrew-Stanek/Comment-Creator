@@ -1,3 +1,6 @@
+### Comment Function
+### __init__.py
+
 import azure.functions as func
 import json
 from openai import OpenAI
