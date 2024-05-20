@@ -1,8 +1,13 @@
+"""
+List of possible assitant parameters which form the request to the API
+"""
+
 ###################
 # Assistant Roles #
 ###################
 
-teacher_assistant = {'role': 'assistant', 'content': 'A kind teacher who uses easy to understand words'}
+teacher_assistant = {'role': 'assistant', 'content':
+                     'A kind teacher who uses easy to understand words'}
 korean_translation = {'role': 'assistant', 'content': 'A translator for a family friend'}
 
 
@@ -15,7 +20,9 @@ korean_translation = {'role': 'assistant', 'content': 'A translator for a family
 # User Roles #
 ##############
 
-request_comment = {'role': 'user', 'content': 'Write a 3-5 sentence summary of academic and behavior of the ESL student for their report cards.'}
+request_comment = {'role': 'user', 'content':
+                    '''Write a 3-5 sentence summary of academic and behavior 
+                    of the ESL student for their report cards.'''}
 request_translation = {'role': 'user', 'content': 'Please translate this into Korean'}
 
 
@@ -23,13 +30,13 @@ request_translation = {'role': 'user', 'content': 'Please translate this into Ko
 # Base Variables #
 ##################
 
-model = 'gpt-3.5-turbo'
-messages = [
+MODEL = 'gpt-3.5-turbo'
+MESSAGES = [
     teacher_assistant,
     request_comment,
 ]
 
-translation_messages = [
+TRANSLATION_MESSAGES = [
     korean_translation,
     request_translation
 ]
